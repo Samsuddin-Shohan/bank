@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Banking</title>
+</head>
+<body>
+    <h1 class="text-center text-6xl	mt-10 mb-10" >Let's Make Some <span class="text-yellow-700	font-semibold">Money</span></h1>
+    <section id="balance-section">
+        <div class="grid grid-cols-3 gap-4 text-white">
+            <div id="deposit" class=" bg-yellow-500 px-8 py-12 text-5xl text-center m-2 rounded">
+                <h1>Deposit</h1>
+            </div>
+            <div id="withdraw" class=" bg-blue-500 px-8 py-12 text-5xl text-center m-2 rounded">
+                <h1>Withdraw</h1>
+            </div>
+            <div id="balance" class=" bg-purple-500 px-8 py-12 text-5xl text-center m-2 rounded">
+                <h1>Balance</h1>
+            </div>
+        </div>
+    </section>
+    <section id="deposit-withdraw-section" class="mt-10" >
+        <div class="grid grid-cols-2 gap-8 mx-4 ">
+            <div class="bg-green-200 rounded p-5 ">
+                <h3 class="text-3xl mb-3">Deposit</h3>
+                <form action="">
+                    
+                    <input type="text" name="" id="deposit-box" placeholder="$ deposit amount" class="border-2 border-green-500	block mb-2 p-1">
+                    <button type="button" class="mb-2 bg-green-500 rounded px-4 py-2" id="deposit-button">Deposit</button>
+                </form>
+            </div>
+            <div class="bg-red-400 rounded p-5 ">
+                <h3 class="text-3xl mb-3">Withdraw</h3>
+                <form action="">
+                    
+                    <input type="text" name="" id="withdraw-box" placeholder="$ Withdrawal amount" class="border-2 border-red-800	block mb-2 p-1">
+                    <button type="button" class="mb-2 bg-green-500 rounded px-4 py-2" id="withdraw-button">Withdraw</button>
+                </form>
+            </div>
+            
+
+            </div>
+
+        </div>
+    </section>
+
+    
+</body>
+</html>
