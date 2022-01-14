@@ -1,29 +1,41 @@
-document.getElementById('deposit-button').addEventListener('click', ()=>{
-   const depositBox = document.getElementById('deposit-box');
-   const currentDepositValueText = depositBox.value;
-   const currentDepositValueAmount = parseFloat(currentDepositValueText);
-    const previoutDepositeValueText = document.getElementById('deposit-value').innerText;    
+const inputValue = (inputId)=>{
+    const depositBox = document.getElementById(inputId);
+    const currentDepositValueText = depositBox.value;
+    const currentDepositValueAmount = parseFloat(currentDepositValueText);
+    return currentDepositValueAmount;
+}
+
+const updateTotal = (totalId,currentAmount)=>{
+    const previoutDepositeValueText = document.getElementById(totalId).innerText;    
     const previoutDepositeValueAmount = parseFloat(previoutDepositeValueText);
-    const totalDepositeAmount = previoutDepositeValueAmount+currentDepositValueAmount;
-    document.getElementById('deposit-value').innerText = totalDepositeAmount;
-    //updating thee balance
-    const previousBalanceText = document.getElementById('balance-value').innerText;   
+    const totalDepositeAmount = previoutDepositeValueAmount+currentAmount;
+    document.getElementById(totalId).innerText = totalDepositeAmount;
+   
+}
+const updateBalance = (balanceId,currentAmount,isAdd)=>{
+    const previousBalanceText = document.getElementById(balanceId).innerText;   
     const previousBalanceAmount = parseFloat(previousBalanceText);
-    const totalBalanceAmount = previousBalanceAmount+ currentDepositValueAmount;
-    document.getElementById('balance-value').innerText = totalBalanceAmount;
+    let totalBalanceAmount=0;
+    
+    if(isAdd){
+         totalBalanceAmount = previousBalanceAmount+ currentAmount;
+    }
+    else{
+         totalBalanceAmount = previousBalanceAmount- currentAmount;
+    }
+    document.getElementById(balanceId).innerText = totalBalanceAmount;
+}
+document.getElementById('deposit-button').addEventListener('click', ()=>{
+   const currentDepositValueAmount = inputValue('deposit-box');
+    updateTotal('deposit-value',currentDepositValueAmount);
+    //updating thee balance
+    updateBalance('balance-value',currentDepositValueAmount,true);
+ 
 
 });
 document.getElementById('withdraw-button').addEventListener('click',()=>{
-    const withdrawBox = document.getElementById('withdraw-box');
-    const currentWithdrawValueText = withdrawBox.value;
-    const currentWithdrawValueAmount = parseFloat(currentWithdrawValueText);
-     const previoutWithdrawValueText = document.getElementById('withdraw-value').innerText;    
-     const previoutWithdrawValueAmount = parseFloat(previoutWithdrawValueText);
-     const totalWithdrawAmount = previoutWithdrawValueAmount+currentWithdrawValueAmount;
-     document.getElementById('withdraw-value').innerText = totalWithdrawAmount;
+    const currentWithdrawValueAmount = inputValue('withdraw-box')
+    updateTotal('withdraw-value',currentWithdrawValueAmount);
       //updating thee balance
-    const previousBalanceText = document.getElementById('balance-value').innerText;   
-    const previousBalanceAmount = parseFloat(previousBalanceText);
-    const totalBalanceAmount = previousBalanceAmount-currentWithdrawValueAmount;
-    document.getElementById('balance-value').innerText = totalBalanceAmount;
+      updateBalance('balance-value',currentWithdrawValueAmount,false);
 })
