@@ -11,14 +11,17 @@
     <h1 class="text-center text-6xl	mt-10 mb-10" >Let's Make Some <span class="text-yellow-700	font-semibold">Money</span></h1>
     <section id="balance-section">
         <div class="grid grid-cols-3 gap-4 text-white">
-            <div id="deposit" class=" bg-yellow-500 px-8 py-12 text-5xl text-center m-2 rounded">
-                <h1>Deposit</h1>
+            <div id="deposit" class=" bg-yellow-500 px-8 py-12  text-center m-2 rounded">
+                <h1 class="text-3xl">Deposit</h1>
+                <p class="text-5xl">$<span id="deposit-value">00</span></p>
             </div>
             <div id="withdraw" class=" bg-blue-500 px-8 py-12 text-5xl text-center m-2 rounded">
-                <h1>Withdraw</h1>
+                <h1 class="text-3xl">Withdraw</h1>
+                <p class="text-5xl">$<span id="withdraw-value">00</span></p>
             </div>
             <div id="balance" class=" bg-purple-500 px-8 py-12 text-5xl text-center m-2 rounded">
-                <h1>Balance</h1>
+                <h1 class="text-3xl">Balance</h1>
+                <p class="text-5xl">$<span id="balance-value">1258</span></p>
             </div>
         </div>
     </section>
@@ -47,6 +50,6 @@
         </div>
     </section>
 
-    
+    <script src="./js/bank.js"></script>
 </body>
 </html>
